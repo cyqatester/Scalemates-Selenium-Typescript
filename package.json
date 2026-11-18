@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "test": "mocha --timeout 60000 --parallel --jobs 2 --require ts-node/register --require tsconfig-paths/register --require test/hooks.ts \"test/**/*.spec.ts\"",
+    "test:ci": "mocha --parallel --jobs 1 --timeout 60000 --require ts-node/register --require tsconfig-paths/register --require test/hooks.ts",
     "test:chrome": "cross-env BROWSER=chrome npm test",
     "test:firefox": "cross-env BROWSER=firefox npm test",
     "test:single": "mocha --timeout 60000 --require ts-node/register --require tsconfig-paths/register --require test/hooks.ts"

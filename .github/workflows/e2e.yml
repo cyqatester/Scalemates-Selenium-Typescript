@@ -36,7 +36,7 @@ jobs:
           cache: npm
 
       - name: Install dependencies
-        run: npm install
+        run: npm ci
 
       - name: Run Selenium tests
         env:
@@ -44,7 +44,7 @@ jobs:
           HEADLESS: "true"
           BASE_URL: https://www.scalemates.com/
           DEFAULT_TIMEOUT: 30000
-        run: npm test
+        run: npm run test:ci
         timeout-minutes: 10
 
       - name: Upload failure screenshots
