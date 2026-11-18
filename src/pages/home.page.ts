@@ -25,8 +25,9 @@ export class HomePage extends BasePage {
 
   private navigationLink(label: string): By {
     const safeLabel = label.replace(/'/g, "&apos;");
+
     return By.xpath(
-      `//a[normalize-space(translate(string(.), '\u00a0', ' '))='${safeLabel}']`
+      `//a[contains(normalize-space(.), '${safeLabel}')]`
     );
   }
 }
