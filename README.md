@@ -1,5 +1,10 @@
-# Scalemates Selenium E2E
+# Scalemates Selenium E2E With Mocha and Chai
 
+<p>
+<picture>
+  <img width="1280" height="720" alt="Scalemates_Selenium_Typescript" src="https://github.com/user-attachments/assets/712a4cb4-feb8-45a8-a6e5-449589549baa" />
+</picture>  
+</p>
 TypeScript + Selenium WebDriver + Mocha + Chai, using the Page Object Model.
 
 ## Setup
@@ -64,14 +69,3 @@ Each spec has its own page object under `src/pages`:
 contains common Selenium navigation, visibility, click, and title helpers. Each spec
 uses only its corresponding page object. `test/hooks.ts` creates and closes a browser
 session for each test; `test/support/driver.ts` provides typed access to that session.
-
-## GitHub Actions CI
-
-The workflow is configured at `.github/workflows/e2e.yml` and runs on pushes and pull requests to `main`/`master`, plus manual runs via **Actions → Scalemates Selenium E2E → Run workflow**.
-
-It uses current Node.js 24-compatible official actions:
-- `actions/checkout@v7`
-- `actions/setup-node@v7`
-- `actions/upload-artifact@v7`
-
-The job uses `ubuntu-24.04`, runs Chrome and Firefox as a browser matrix, and uploads screenshots if a test job fails. The workflow currently uses `npm install` because this starter archive does not include a generated `package-lock.json`. After running `npm install` locally, commit the generated `package-lock.json` and change the workflow install step to `npm ci` for reproducible CI installs.
